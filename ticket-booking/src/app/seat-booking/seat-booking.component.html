@@ -1,0 +1,24 @@
+<div class="seats-container">
+    <div
+      *ngFor="let seat of seats"
+      class="seat"
+      [ngClass]="{ booked: seat.booked }"
+    >
+      {{ seat.seatNumber }}
+    </div>
+  </div>
+  
+  <div class="booking-form">
+    <input
+      type="number"
+      [(ngModel)]="seatCount"
+      placeholder="Enter number of seats to book"
+    />
+    <button (click)="bookSeats(seatCount)">Book Seats</button>
+  </div>
+  
+  <div *ngIf="bookedSeats.length > 0">
+    <h4>Seats Booked:</h4>
+    <span *ngFor="let seat of bookedSeats">Booked seat no.: {{ seat }}; </span>
+  </div>
+  

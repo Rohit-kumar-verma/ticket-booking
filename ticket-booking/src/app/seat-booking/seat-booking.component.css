@@ -1,0 +1,25 @@
+.seats-container {
+    display: grid;
+    grid-template-columns: repeat(7, 40px);
+    gap: 10px;
+    max-width: 300px;
+  }
+  
+  .seat {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .seat.booked {
+    background-color: #ff4d4d;
+    color: white;
+  }
+  
+  .booking-form {
+    margin-top: 20px;
+  }
+  
