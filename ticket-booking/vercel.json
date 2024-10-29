@@ -1,0 +1,16 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "angular.json",
+        "use": "@vercel/static-build",
+        "config": {
+          "distDir": "dist/ticket-booking" 
+        }
+      }
+    ],
+    "scripts": {
+      "build": "npx ng build --configuration production"
+    }
+  }
+  
