@@ -11,6 +11,10 @@
     ],
     "scripts": {
       "build": "npx ng build --configuration production"
+    },
+    
+    "env": {
+      "NODE_VERSION": "16"
     }
   }
   
