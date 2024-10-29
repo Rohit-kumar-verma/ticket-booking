@@ -14,7 +14,10 @@
       [(ngModel)]="seatCount"
       placeholder="Enter number of seats to book"
     />
-    <button (click)="bookSeats(seatCount)">Book Seats</button>
+    <!-- <button (click)="bookSeats(seatCount)">Book Seats</button> -->
+    <button *ngIf="seatCount!=null" (click)="bookSeats(seatCount)">Book Seats</button>
+    <button *ngIf="seatCount==null">Book Seats</button>
+    
   </div>
   
   <div *ngIf="bookedSeats.length > 0">

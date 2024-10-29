@@ -14,7 +14,9 @@ export class SeatBookingComponent {
   seatsPerRow = 7; // Seats in each row, except the last row
   lastRowSeats = 3; // Seats in the last row
   totalSeats = 80; // Total seats
-  seatCount = 0; // Tracks the current count of booked seats
+ // Tracks the current count of booked seats
+
+ seatCount: number | null = null;
 
   seats: Array<{ row: number; seatNumber: number; booked: boolean }> = []; // Array to store seat details
   bookedSeats: number[] = []; // Array to store booked seat numbers
@@ -55,6 +57,9 @@ export class SeatBookingComponent {
     // Book the seats and update the bookedSeats array
     possibleSeats.forEach((seat) => (seat.booked = true));
     this.bookedSeats = possibleSeats.map((seat) => seat.seatNumber);
+
+    this.seatCount = null; // Reset seatCount to clear input field
+
   }
 
   // Helper function to find available seats within the same row
@@ -72,4 +77,5 @@ export class SeatBookingComponent {
   findNearbySeats(numSeats: number, availableSeats: any[]) {
     return availableSeats.slice(0, numSeats); // Simply take the first `numSeats` from available seats
   }
+  
 }
